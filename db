@@ -1,0 +1,19 @@
+Basic Steps to access database  -
+
+
+sudo -u postgres psql maxwallet ;                   // to login to the database
+
+
+\dt                                                 // to list the tables in the database 
+
+
+create table TABLENAME (id serial primary key,
+
+COLUMN_NAME TYPE );
+
+
+
+Put ; after query when using in terminal
+
+
+select * from TABLE_NAME where COLUMN_NAME=VALUE ;  
