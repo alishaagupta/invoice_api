@@ -75,3 +75,22 @@ Output:
           'flag': constants.responseFlags.ACTION_COMPLETE ,
           'result': result
   }
+  
+  
+  5. /get_all_balances                     // subsitute of /get_user_data
+  
+  Input: 
+  {
+      "wallet_id" : ''
+      "addresses" : ''
+  }
+  
+  Output :
+  
+  { 
+      'log': 'Data Fetched Successfully',
+      'assetData': final_data,
+      "lndBalance"  : lndBalance,
+      'flag': constants.responseFlags.ACTION_COMPLETE
+      
+ }
