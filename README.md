@@ -1,7 +1,7 @@
 # invoice_api
 
 
-1.   /send_funds
+1.   /send_funds                 
 
 Input: 
 {
@@ -19,6 +19,10 @@ Output:
 
 2.  /create_invoice
 
+
+// generates invoice and inserts it into invoice_tb 
+
+
 Input: 
 {
    'amount' :  ,
@@ -35,6 +39,10 @@ Output:
  
  3. /spend_invoice 
  
+ // Decodes the invoice provided, and checks the balance of given wallet is >= to invoice value
+ // Checks for in wallet invoices 
+ // if the invoice is not in wallet, checks for the 
+ 
  Input: 
  
  {
@@ -50,3 +58,20 @@ Output:
   }
   
   
+  4. /send_coins
+  
+  Input: 
+  {
+      asset_id :  ' ' ,
+      transaction_hash :  ' ',
+      address : ' ' ,
+      amount : ' ' ,
+      lnd : ' '        // for lightning transaction send lnd == 1
+  }
+  
+  Output :  
+  {
+          'log': 'Funds transferred successfully',
+          'flag': constants.responseFlags.ACTION_COMPLETE ,
+          'result': result
+  }
