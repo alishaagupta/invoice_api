@@ -1,0 +1,33 @@
+  
+  var request = require('request');
+  var fs = require('fs');
+  
+  
+  var satellite_api = 'https://satellite.blockstream.com/api/order'
+
+
+  var formData = {
+  
+  "bid": "70000",
+  "file": fs.createReadStream('/root/lightning/new-backend/package.json')
+};
+
+request.post({
+  url: satellite_api,
+  formData: formData
+}, function (err, res, body) {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log(body);
+  }
+});
+
+
+
+//////
+
+Commands for lncli 
+
+cd ~/gocode/dev/alice 
+ lncli --rpcserver=localhost:10001 --macaroonpath=data/chain/bitcoin/testnet/admin.macaroon --help
